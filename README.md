@@ -35,3 +35,10 @@ contract SimpleStorage {
         data = newData;
     }
 }
+
+### UI for SimpleStorage Contract
+
+```html
+<input id="inputData" placeholder="Enter new data" />
+<button onclick="updateData()">Save</button>
+<p>Stored: <span id="storedData"></span></p>
