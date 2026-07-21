@@ -73,3 +73,13 @@ function clearData() public onlyOwner {
 function transferOwnership(address newOwner) public onlyOwner {
     owner = newOwner;
 }
+
+### Ownership Event
+
+```solidity
+event OwnershipTransferred(address previousOwner, address newOwner);
+
+function transferOwnership(address newOwner) public onlyOwner {
+    emit OwnershipTransferred(owner, newOwner);
+    owner = newOwner;
+}
