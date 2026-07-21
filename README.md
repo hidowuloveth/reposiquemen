@@ -96,3 +96,14 @@ function updateData(...) public whenNotPaused {
 ```solidity
 event Paused(address account);
 event Unpaused(address account);
+
+### View Functions
+
+```solidity
+function getData() public view returns (string memory) {
+    return data;
+}
+
+function getOwner() public view returns (address) {
+    return owner;
+}
