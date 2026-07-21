@@ -12,3 +12,12 @@ This repo will contain notes, code examples, and resources as I learn about Laye
 - Developer-friendly environment
 
 This repo will serve as my personal knowledge base.
+
+### Setting Up Tools for Base
+
+- MetaMask or Coinbase Wallet
+- Remix IDE for quick testing
+- Blockscout explorer
+- Base network configuration
+
+Ready to start writing and deploying code.
