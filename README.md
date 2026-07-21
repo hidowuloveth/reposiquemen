@@ -132,3 +132,10 @@ event Fallback(address sender, uint256 value);
 function supportsInterface(bytes4 interfaceId) public pure returns (bool) {
     return interfaceId == 0x01ffc9a7;
 }
+
+### Get Balance
+
+```solidity
+function getContractBalance() public view returns (uint256) {
+    return address(this).balance;
+}
