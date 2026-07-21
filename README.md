@@ -52,3 +52,10 @@ function updateData(string memory newData) public {
     data = newData;
     emit DataUpdated(msg.sender, newData);
 }
+
+### Listening to Data Updates
+
+```javascript
+contract.on("DataUpdated", (updater, newData) => {
+  document.getElementById("storedData").innerText = newData;
+});
