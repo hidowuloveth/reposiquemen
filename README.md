@@ -66,3 +66,10 @@ contract.on("DataUpdated", (updater, newData) => {
 function clearData() public onlyOwner {
     data = "";
 }
+
+### Ownership Transfer
+
+```solidity
+function transferOwnership(address newOwner) public onlyOwner {
+    owner = newOwner;
+}
