@@ -146,3 +146,12 @@ function getContractBalance() public view returns (uint256) {
 function renounceOwnership() public onlyOwner {
     owner = address(0);
 }
+
+### Version Tracking
+
+```solidity
+string public version = "1.0";
+
+function getVersion() public view returns (string memory) {
+    return version;
+}
