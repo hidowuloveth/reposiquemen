@@ -42,3 +42,13 @@ contract SimpleStorage {
 <input id="inputData" placeholder="Enter new data" />
 <button onclick="updateData()">Save</button>
 <p>Stored: <span id="storedData"></span></p>
+
+### Events in SimpleStorage
+
+```solidity
+event DataUpdated(address updater, string newData);
+
+function updateData(string memory newData) public {
+    data = newData;
+    emit DataUpdated(msg.sender, newData);
+}
