@@ -21,3 +21,17 @@ This repo will serve as my personal knowledge base.
 - Base network configuration
 
 Ready to start writing and deploying code.
+
+### Basic Storage Contract
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract SimpleStorage {
+    string public data = "Learning Base";
+
+    function updateData(string memory newData) public {
+        data = newData;
+    }
+}
