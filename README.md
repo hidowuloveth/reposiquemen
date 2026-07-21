@@ -83,3 +83,10 @@ function transferOwnership(address newOwner) public onlyOwner {
     emit OwnershipTransferred(owner, newOwner);
     owner = newOwner;
 }
+
+### Adding Pause
+
+```solidity
+function updateData(...) public whenNotPaused {
+    // normal logic
+}
