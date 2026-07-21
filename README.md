@@ -59,3 +59,10 @@ function updateData(string memory newData) public {
 contract.on("DataUpdated", (updater, newData) => {
   document.getElementById("storedData").innerText = newData;
 });
+
+### Owner Control
+
+```solidity
+function clearData() public onlyOwner {
+    data = "";
+}
