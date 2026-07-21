@@ -125,3 +125,10 @@ fallback() external payable {
 }
 
 event Fallback(address sender, uint256 value);
+
+### supportsInterface
+
+```markdown
+function supportsInterface(bytes4 interfaceId) public pure returns (bool) {
+    return interfaceId == 0x01ffc9a7;
+}
