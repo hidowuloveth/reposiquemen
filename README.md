@@ -107,3 +107,12 @@ function getData() public view returns (string memory) {
 function getOwner() public view returns (address) {
     return owner;
 }
+
+### Receive Function
+
+```solidity
+receive() external payable {
+    emit Received(msg.sender, msg.value);
+}
+
+event Received(address sender, uint256 value);
