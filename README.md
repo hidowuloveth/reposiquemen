@@ -90,3 +90,9 @@ function transferOwnership(address newOwner) public onlyOwner {
 function updateData(...) public whenNotPaused {
     // normal logic
 }
+
+### Pause Events
+
+```solidity
+event Paused(address account);
+event Unpaused(address account);
