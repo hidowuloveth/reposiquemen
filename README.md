@@ -222,3 +222,10 @@ string public version = "1.0";
 function getVersion() public view returns (string memory) {
     return version;
 }
+
+### Get Paused Status
+
+```solidity
+function getPausedStatus() public view returns (bool) {
+    return paused;
+}
