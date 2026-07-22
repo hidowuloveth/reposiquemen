@@ -162,3 +162,10 @@ function getVersion() public view returns (string memory) {
 function isOwner(address account) public view returns (bool) {
     return account == owner;
 }
+
+### Paused Status
+
+```solidity
+function getPausedStatus() public view returns (bool) {
+    return paused;
+}
