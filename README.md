@@ -213,3 +213,12 @@ function isOwner(address account) public view returns (bool) {
 function getContractBalance() public view returns (uint256) {
     return address(this).balance;
 }
+
+### Get Version
+
+```solidity
+string public version = "1.0";
+
+function getVersion() public view returns (string memory) {
+    return version;
+}
