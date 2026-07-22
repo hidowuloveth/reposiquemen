@@ -183,3 +183,10 @@ function getContractBalance() public view returns (uint256) {
 function getOwner() public view returns (address) {
     return owner;
 }
+
+### supportsInterface
+
+```solidity
+function supportsInterface(bytes4 interfaceId) public pure returns (bool) {
+    return interfaceId == 0x01ffc9a7;
+}
