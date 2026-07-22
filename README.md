@@ -177,3 +177,9 @@ function getContractBalance() public view returns (uint256) {
     return address(this).balance;
 }
 
+### Get Owner Function
+
+```solidity
+function getOwner() public view returns (address) {
+    return owner;
+}
