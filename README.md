@@ -190,3 +190,12 @@ function getOwner() public view returns (address) {
 function supportsInterface(bytes4 interfaceId) public pure returns (bool) {
     return interfaceId == 0x01ffc9a7;
 }
+
+### Version Function
+
+```solidity
+string public version = "1.0";
+
+function getVersion() public pure returns (string memory) {
+    return version;
+}
