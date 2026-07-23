@@ -273,3 +273,11 @@ function getVersion() public pure returns (string memory) {
 function isOwner(address account) public view returns (bool) {
     return account == owner;
 }
+
+### supportsInterface
+
+```solidity
+function supportsInterface(bytes4 interfaceId) public pure returns (bool) {
+    return interfaceId == 0x01ffc9a7;
+}
+
