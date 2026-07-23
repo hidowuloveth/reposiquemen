@@ -281,3 +281,10 @@ function supportsInterface(bytes4 interfaceId) public pure returns (bool) {
     return interfaceId == 0x01ffc9a7;
 }
 
+
+### Get Paused Status
+
+```solidity
+function getPausedStatus() public view returns (bool) {
+    return paused;
+}
