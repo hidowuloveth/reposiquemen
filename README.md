@@ -453,3 +453,15 @@ function withdraw(uint256 amount) public {
     balances[msg.sender] -= amount;
     payable(msg.sender).transfer(amount - fee);
 }
+
+### Fee Claim Event
+
+```solidity
+event FeesClaimed(address indexed owner, uint256 amount);
+
+function claimFees() public onlyOwner {
+    uint256 amount = totalFeesCollected;
+    totalFeesCollected = 0;
+    payable(owner).transfer(amount);
+    emit FeesClaimed(owner, amount);
+}
