@@ -442,3 +442,14 @@ function deposit() public payable {
     totalFeesCollected += fee;
     balances[msg.sender] += msg.value - fee;
 }
+
+### Total Fees from Withdraw
+
+```solidity
+function withdraw(uint256 amount) public {
+    require(balances[msg.sender] >= amount, "Insufficient");
+    uint256 fee = (amount * withdrawFee) / 100;
+    totalFeesCollected += fee;
+    balances[msg.sender] -= amount;
+    payable(msg.sender).transfer(amount - fee);
+}
