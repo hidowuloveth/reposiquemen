@@ -350,3 +350,10 @@ event Received(address sender, uint256 value);
 function renounceOwnership() public onlyOwner {
     owner = address(0);
 }
+
+### Unpause Function
+
+```solidity
+function unpause() public onlyOwner {
+    paused = false;
+}
