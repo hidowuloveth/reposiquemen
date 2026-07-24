@@ -334,3 +334,12 @@ string public version = "1.0";
 function getVersion() public pure returns (string memory) {
     return version;
 }
+
+### Receive Function
+
+```solidity
+receive() external payable {
+    emit Received(msg.sender, msg.value);
+}
+
+event Received(address sender, uint256 value);
