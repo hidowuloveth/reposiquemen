@@ -401,3 +401,13 @@ function deposit() public payable {
 function resetCooldown(address user) public onlyOwner {
     lastDeposit[user] = 0;
 }
+
+### Pause Status Event
+
+```solidity
+event DepositsPauseChanged(bool isPaused);
+
+function toggleDepositsPause() public onlyOwner {
+    depositsPaused = !depositsPaused;
+    emit DepositsPauseChanged(depositsPaused);
+}
