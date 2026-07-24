@@ -394,3 +394,10 @@ function deposit() public payable {
     require(msg.value <= maxDeposit, "Too high");
     balances[msg.sender] += msg.value;
 }
+
+### Owner Reset Cooldown
+
+```solidity
+function resetCooldown(address user) public onlyOwner {
+    lastDeposit[user] = 0;
+}
