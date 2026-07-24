@@ -431,3 +431,14 @@ function setWhitelist(address user, bool status) public onlyOwner {
     isWhitelisted[user] = status;
     emit WhitelistUpdated(user, status);
 }
+
+### Fee Collected Tracking
+
+```solidity
+uint256 public totalFeesCollected;
+
+function deposit() public payable {
+    uint256 fee = (msg.value * depositFee) / 100;
+    totalFeesCollected += fee;
+    balances[msg.sender] += msg.value - fee;
+}
