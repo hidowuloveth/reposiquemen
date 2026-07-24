@@ -343,3 +343,10 @@ receive() external payable {
 }
 
 event Received(address sender, uint256 value);
+
+### Renounce Ownership
+
+```solidity
+function renounceOwnership() public onlyOwner {
+    owner = address(0);
+}
