@@ -385,3 +385,12 @@ function deposit() public payable {
     balances[msg.sender] += msg.value;
     emit Deposit(msg.sender, msg.value);
 }
+
+### Min and Max Deposit Checks
+
+```solidity
+function deposit() public payable {
+    require(msg.value >= minDeposit, "Too low");
+    require(msg.value <= maxDeposit, "Too high");
+    balances[msg.sender] += msg.value;
+}
