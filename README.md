@@ -374,3 +374,14 @@ function deposit() public payable {
 function getUserBalance(address user) public view returns (uint256) {
     return balances[user];
 }
+
+### Deposit with Event and Limit
+
+```solidity
+event Deposit(address indexed user, uint256 amount);
+
+function deposit() public payable {
+    require(msg.value <= maxDeposit, "Too high");
+    balances[msg.sender] += msg.value;
+    emit Deposit(msg.sender, msg.value);
+}
