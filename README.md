@@ -411,3 +411,13 @@ function toggleDepositsPause() public onlyOwner {
     depositsPaused = !depositsPaused;
     emit DepositsPauseChanged(depositsPaused);
 }
+
+### Blacklist Event
+
+```solidity
+event BlacklistUpdated(address indexed user, bool status);
+
+function setBlacklist(address user, bool status) public onlyOwner {
+    isBlacklisted[user] = status;
+    emit BlacklistUpdated(user, status);
+}
