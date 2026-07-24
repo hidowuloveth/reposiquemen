@@ -357,3 +357,13 @@ function renounceOwnership() public onlyOwner {
 function unpause() public onlyOwner {
     paused = false;
 }
+
+### Deposit Event
+
+```solidity
+event Deposited(address indexed user, uint256 amount);
+
+function deposit() public payable {
+    balances[msg.sender] += msg.value;
+    emit Deposited(msg.sender, msg.value);
+}
