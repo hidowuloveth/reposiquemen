@@ -421,3 +421,13 @@ function setBlacklist(address user, bool status) public onlyOwner {
     isBlacklisted[user] = status;
     emit BlacklistUpdated(user, status);
 }
+
+### Whitelist Event
+
+```solidity
+event WhitelistUpdated(address indexed user, bool status);
+
+function setWhitelist(address user, bool status) public onlyOwner {
+    isWhitelisted[user] = status;
+    emit WhitelistUpdated(user, status);
+}
