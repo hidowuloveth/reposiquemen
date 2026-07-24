@@ -367,3 +367,10 @@ function deposit() public payable {
     balances[msg.sender] += msg.value;
     emit Deposited(msg.sender, msg.value);
 }
+
+### Get User Balance
+
+```solidity
+function getUserBalance(address user) public view returns (uint256) {
+    return balances[user];
+}
