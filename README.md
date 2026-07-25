@@ -465,3 +465,10 @@ function claimFees() public onlyOwner {
     payable(owner).transfer(amount);
     emit FeesClaimed(owner, amount);
 }
+
+### Get Referrer
+
+```solidity
+function getReferrer(address user) public view returns (address) {
+    return referrer[user];
+}
