@@ -472,3 +472,10 @@ function claimFees() public onlyOwner {
 function getReferrer(address user) public view returns (address) {
     return referrer[user];
 }
+
+### Get Pending Rewards
+
+```solidity
+function getPendingRewards(address user) public view returns (uint256) {
+    return pendingReferralRewards[user];
+}
