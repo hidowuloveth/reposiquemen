@@ -492,3 +492,10 @@ function claimReferralRewards() public {
     totalReferralPaid += reward;
     payable(msg.sender).transfer(reward);
 }
+
+### Referral Stats View
+
+```solidity
+function getReferralStats(address user) public view returns (uint256 count, uint256 pending) {
+    return (referralCount[user], pendingReferralRewards[user]);
+}
