@@ -479,3 +479,16 @@ function getReferrer(address user) public view returns (address) {
 function getPendingRewards(address user) public view returns (uint256) {
     return pendingReferralRewards[user];
 }
+
+### Total Referral Rewards Paid
+
+```solidity
+uint256 public totalReferralPaid;
+
+function claimReferralRewards() public {
+    uint256 reward = pendingReferralRewards[msg.sender];
+    require(reward > 0, "No rewards");
+    pendingReferralRewards[msg.sender] = 0;
+    totalReferralPaid += reward;
+    payable(msg.sender).transfer(reward);
+}
