@@ -544,3 +544,10 @@ function unstake(uint256 amount) public {
 function getCompoundableAmount(address user) public view returns (uint256) {
     return calculateReward(user) + pendingStakeRewards[user];
 }
+
+### Get Total Staked
+
+```solidity
+function getTotalStaked() public view returns (uint256) {
+    return totalStaked;
+}
