@@ -589,3 +589,13 @@ function stake() public payable {
 function getUserStakeStats(address user) public view returns (uint256 amount, uint256 count, uint256 lastTime) {
     return (stakedAmount[user], stakeCount[user], lastStakeTime[user]);
 }
+
+### Staking Pause Event
+
+```solidity
+event StakingPauseChanged(bool isPaused);
+
+function toggleStakingPause() public onlyOwner {
+    stakingPaused = !stakingPaused;
+    emit StakingPauseChanged(stakingPaused);
+}
