@@ -517,3 +517,11 @@ function getStakeInfo(address user) public view returns (uint256 amount, uint256
     return (stakedAmount[user], stakeTimestamp[user], pendingStakeRewards[user]);
 }
 
+
+### Lock Status View
+
+```solidity
+function isLocked(address user) public view returns (bool) {
+    return block.timestamp < stakeTimestamp[user] + lockPeriod;
+}
+
