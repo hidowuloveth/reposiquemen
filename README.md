@@ -537,3 +537,10 @@ function unstake(uint256 amount) public {
         totalPenaltiesCollected += penalty;
     }
 }
+
+### Get Compoundable Amount
+
+```solidity
+function getCompoundableAmount(address user) public view returns (uint256) {
+    return calculateReward(user) + pendingStakeRewards[user];
+}
