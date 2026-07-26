@@ -562,3 +562,13 @@ function stake() public payable {
     totalStaked += msg.value;
     emit Staked(msg.sender, msg.value);
 }
+
+### Reward Rate Event
+
+```solidity
+event RewardRateUpdated(uint256 newRate);
+
+function setRewardRate(uint256 _rate) public onlyOwner {
+    rewardRate = _rate;
+    emit RewardRateUpdated(_rate);
+}
