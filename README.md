@@ -599,3 +599,13 @@ function toggleStakingPause() public onlyOwner {
     stakingPaused = !stakingPaused;
     emit StakingPauseChanged(stakingPaused);
 }
+
+### Stake Blacklist Event
+
+```solidity
+event StakeBlacklistUpdated(address indexed user, bool status);
+
+function setStakeBlacklist(address user, bool status) public onlyOwner {
+    isStakeBlacklisted[user] = status;
+    emit StakeBlacklistUpdated(user, status);
+}
