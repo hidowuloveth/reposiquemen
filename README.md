@@ -509,3 +509,11 @@ function calculateReward(address user) public view returns (uint256) {
     uint256 timeStaked = block.timestamp - stakeTimestamp[user];
     return (stakedAmount[user] * rewardRate * timeStaked) / 1 days;
 }
+
+### Get Stake Info
+
+```solidity
+function getStakeInfo(address user) public view returns (uint256 amount, uint256 timestamp, uint256 pending) {
+    return (stakedAmount[user], stakeTimestamp[user], pendingStakeRewards[user]);
+}
+
