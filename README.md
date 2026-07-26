@@ -499,3 +499,13 @@ function claimReferralRewards() public {
 function getReferralStats(address user) public view returns (uint256 count, uint256 pending) {
     return (referralCount[user], pendingReferralRewards[user]);
 }
+
+### Staking Reward Idea
+
+```solidity
+uint256 public rewardRate = 1; // example rate
+
+function calculateReward(address user) public view returns (uint256) {
+    uint256 timeStaked = block.timestamp - stakeTimestamp[user];
+    return (stakedAmount[user] * rewardRate * timeStaked) / 1 days;
+}
