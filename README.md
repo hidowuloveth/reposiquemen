@@ -525,3 +525,15 @@ function isLocked(address user) public view returns (bool) {
     return block.timestamp < stakeTimestamp[user] + lockPeriod;
 }
 
+
+### Penalty Collected Tracking
+
+```solidity
+uint256 public totalPenaltiesCollected;
+
+function unstake(uint256 amount) public {
+    // ... existing logic
+    if (penalty > 0) {
+        totalPenaltiesCollected += penalty;
+    }
+}
