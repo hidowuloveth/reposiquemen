@@ -551,3 +551,14 @@ function getCompoundableAmount(address user) public view returns (uint256) {
 function getTotalStaked() public view returns (uint256) {
     return totalStaked;
 }
+
+### Stake Event
+
+```solidity
+event Staked(address indexed user, uint256 amount);
+
+function stake() public payable {
+    stakedAmount[msg.sender] += msg.value;
+    totalStaked += msg.value;
+    emit Staked(msg.sender, msg.value);
+}
