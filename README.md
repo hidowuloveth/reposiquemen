@@ -582,3 +582,10 @@ function stake() public payable {
     stakedAmount[msg.sender] += msg.value;
     totalStaked += msg.value;
 }
+
+### Get User Stake Stats
+
+```solidity
+function getUserStakeStats(address user) public view returns (uint256 amount, uint256 count, uint256 lastTime) {
+    return (stakedAmount[user], stakeCount[user], lastStakeTime[user]);
+}
