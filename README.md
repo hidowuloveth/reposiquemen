@@ -572,3 +572,13 @@ function setRewardRate(uint256 _rate) public onlyOwner {
     rewardRate = _rate;
     emit RewardRateUpdated(_rate);
 }
+
+### Combined Min and Max Stake Checks
+
+```solidity
+function stake() public payable {
+    require(msg.value >= minStake, "Too low");
+    require(stakedAmount[msg.sender] + msg.value <= maxStake, "Exceeds max");
+    stakedAmount[msg.sender] += msg.value;
+    totalStaked += msg.value;
+}
