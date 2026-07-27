@@ -715,3 +715,14 @@ function claimStakeRewards() public {
     payable(msg.sender).transfer(reward);
     emit RewardsClaimed(msg.sender, reward);
 }
+
+### Daily Limit Event
+
+```solidity
+event MaxDailyRewardUpdated(uint256 newMax);
+
+function setMaxDailyReward(uint256 _max) public onlyOwner {
+    maxDailyReward = _max;
+    emit MaxDailyRewardUpdated(_max);
+}
+
