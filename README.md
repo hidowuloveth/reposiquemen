@@ -702,3 +702,16 @@ function setReferralBoost(uint256 _threshold, uint256 _multiplier) public onlyOw
     referralBoostMultiplier = _multiplier;
     emit ReferralBoostUpdated(_threshold, _multiplier);
 }
+
+### Rewards Distributed Event
+
+```solidity
+event RewardsClaimed(address indexed user, uint256 amount);
+
+function claimStakeRewards() public {
+    uint256 reward = pendingStakeRewards[msg.sender];
+    pendingStakeRewards[msg.sender] = 0;
+    totalRewardsDistributed += reward;
+    payable(msg.sender).transfer(reward);
+    emit RewardsClaimed(msg.sender, reward);
+}
