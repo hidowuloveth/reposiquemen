@@ -684,3 +684,10 @@ function getUserLockInfo(address user) public view returns (uint256 amount, uint
 function canUnlock(address user) public view returns (bool) {
     return block.timestamp >= stakeTimestamp[user] + userLockDuration[user];
 }
+
+### Is Auto-Extend Enabled
+
+```solidity
+function isAutoExtendEnabled(address user) public view returns (bool) {
+    return autoExtend[user];
+}
