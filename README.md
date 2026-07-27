@@ -639,3 +639,17 @@ function setUnstakeFee(uint256 _fee) public onlyOwner {
     unstakeFee = _fee;
     emit UnstakeFeeUpdated(_fee);
 }
+
+### Emergency Mode Flag
+
+```solidity
+bool public emergencyMode = false;
+
+function setEmergencyMode(bool status) public onlyOwner {
+    emergencyMode = status;
+}
+
+function emergencyWithdraw() public {
+    require(emergencyMode, "Not in emergency");
+    // existing withdraw logic
+}
