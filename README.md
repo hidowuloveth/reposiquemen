@@ -677,3 +677,10 @@ function getUserLockInfo(address user) public view returns (uint256 amount, uint
         stakeTimestamp[user] + userLockDuration[user]
     );
 }
+
+### Can Unlock View
+
+```solidity
+function canUnlock(address user) public view returns (bool) {
+    return block.timestamp >= stakeTimestamp[user] + userLockDuration[user];
+}
