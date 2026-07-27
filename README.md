@@ -619,3 +619,13 @@ function setStakeWhitelist(address user, bool status) public onlyOwner {
     isStakeWhitelisted[user] = status;
     emit StakeWhitelistUpdated(user, status);
 }
+
+### Stake Fee Event
+
+```solidity
+event StakeFeeUpdated(uint256 newFee);
+
+function setStakeFee(uint256 _fee) public onlyOwner {
+    stakeFee = _fee;
+    emit StakeFeeUpdated(_fee);
+}
