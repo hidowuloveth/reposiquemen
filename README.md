@@ -629,3 +629,13 @@ function setStakeFee(uint256 _fee) public onlyOwner {
     stakeFee = _fee;
     emit StakeFeeUpdated(_fee);
 }
+
+### Unstake Fee Event
+
+```solidity
+event UnstakeFeeUpdated(uint256 newFee);
+
+function setUnstakeFee(uint256 _fee) public onlyOwner {
+    unstakeFee = _fee;
+    emit UnstakeFeeUpdated(_fee);
+}
