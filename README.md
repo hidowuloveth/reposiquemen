@@ -726,3 +726,10 @@ function setMaxDailyReward(uint256 _max) public onlyOwner {
     emit MaxDailyRewardUpdated(_max);
 }
 
+### Batch Update Idea
+
+```solidity
+function batchUpdateRewards(address[] calldata users) public onlyOwner {
+    for (uint i = 0; i < users.length; i++) {
+        updateRewards(users[i]);
+   
