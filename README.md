@@ -691,3 +691,14 @@ function canUnlock(address user) public view returns (bool) {
 function isAutoExtendEnabled(address user) public view returns (bool) {
     return autoExtend[user];
 }
+
+### Referral Boost Event
+
+```solidity
+event ReferralBoostUpdated(uint256 threshold, uint256 multiplier);
+
+function setReferralBoost(uint256 _threshold, uint256 _multiplier) public onlyOwner {
+    referralBoostThreshold = _threshold;
+    referralBoostMultiplier = _multiplier;
+    emit ReferralBoostUpdated(_threshold, _multiplier);
+}
