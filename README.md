@@ -609,3 +609,13 @@ function setStakeBlacklist(address user, bool status) public onlyOwner {
     isStakeBlacklisted[user] = status;
     emit StakeBlacklistUpdated(user, status);
 }
+
+### Stake Whitelist Event
+
+```solidity
+event StakeWhitelistUpdated(address indexed user, bool status);
+
+function setStakeWhitelist(address user, bool status) public onlyOwner {
+    isStakeWhitelisted[user] = status;
+    emit StakeWhitelistUpdated(user, status);
+}
