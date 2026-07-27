@@ -666,3 +666,14 @@ function calculateReward(address user) public view returns (uint256) {
     }
     return baseReward;
 }
+
+### Lock Duration View
+
+```solidity
+function getUserLockInfo(address user) public view returns (uint256 amount, uint256 lockDuration, uint256 unlockTime) {
+    return (
+        stakedAmount[user],
+        userLockDuration[user],
+        stakeTimestamp[user] + userLockDuration[user]
+    );
+}
