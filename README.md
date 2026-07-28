@@ -768,3 +768,7 @@ require(success, "Transfer failed");
 - Write basic tests
 - Connect a simple frontend
 - Explore real DeFi protocols on Base for inspiration
+
+### Repository Purpose
+
+This repo serves as a personal learning journal for exploring smart contract development on Base, documenting useful patterns and progressive improvements.
