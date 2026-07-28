@@ -801,3 +801,10 @@ function totalSupply() public view returns (uint256) {
 function exists(uint256 tokenId) public view returns (bool) {
     return ownerOf[tokenId] != address(0);
 }
+
+### Set Max Batch Size
+
+```solidity
+function setMaxBatchSize(uint256 _max) public onlyOwner {
+    maxBatchSize = _max;
+}
