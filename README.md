@@ -761,3 +761,10 @@ require(success, "Transfer failed");
 - Prefer custom errors in Solidity 0.8.4+ for gas savings
 - Always validate user inputs
 - Handle edge cases (zero amounts, zero addresses)
+
+### Next Steps
+
+- Deploy a cleaned version to Base Sepolia
+- Write basic tests
+- Connect a simple frontend
+- Explore real DeFi protocols on Base for inspiration
