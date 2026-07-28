@@ -794,3 +794,10 @@ function getApproved(uint256 tokenId) public view returns (address) {
 function totalSupply() public view returns (uint256) {
     return nextTokenId;
 }
+
+### Exists Check
+
+```solidity
+function exists(uint256 tokenId) public view returns (bool) {
+    return ownerOf[tokenId] != address(0);
+}
