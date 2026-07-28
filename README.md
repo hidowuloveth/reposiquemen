@@ -746,3 +746,11 @@ function isActiveUser(address user) public view returns (bool) {
 - Cache storage variables in memory
 - Avoid unnecessary SSTORE operations
 - Use events instead of storing temporary data
+
+### Safe Transfer Note
+
+Prefer using:
+
+```solidity
+(bool success, ) = payable(user).call{value: amount}("");
+require(success, "Transfer failed");
