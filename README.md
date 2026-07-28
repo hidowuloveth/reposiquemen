@@ -772,3 +772,11 @@ require(success, "Transfer failed");
 ### Repository Purpose
 
 This repo serves as a personal learning journal for exploring smart contract development on Base, documenting useful patterns and progressive improvements.
+
+### NFT Transfer Idea
+
+```solidity
+function transfer(address to, uint256 tokenId) public {
+    require(ownerOf[tokenId] == msg.sender, "Not owner");
+    ownerOf[tokenId] = to;
+}
