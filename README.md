@@ -787,3 +787,10 @@ function transfer(address to, uint256 tokenId) public {
 function getApproved(uint256 tokenId) public view returns (address) {
     return tokenApproval[tokenId];
 }
+
+### Total Supply View
+
+```solidity
+function totalSupply() public view returns (uint256) {
+    return nextTokenId;
+}
