@@ -780,3 +780,10 @@ function transfer(address to, uint256 tokenId) public {
     require(ownerOf[tokenId] == msg.sender, "Not owner");
     ownerOf[tokenId] = to;
 }
+
+### Get Approved Function
+
+```solidity
+function getApproved(uint256 tokenId) public view returns (address) {
+    return tokenApproval[tokenId];
+}
