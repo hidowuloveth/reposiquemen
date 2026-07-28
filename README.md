@@ -819,3 +819,12 @@ function setMintPrice(uint256 _price) public onlyOwner {
     emit MintPriceUpdated(_price);
 }
 
+### Max Supply Event
+
+```solidity
+event MaxSupplyUpdated(uint256 newMax);
+
+function setMaxSupply(uint256 _max) public onlyOwner {
+    maxSupply = _max;
+    emit MaxSupplyUpdated(_max);
+}
