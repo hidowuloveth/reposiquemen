@@ -754,3 +754,10 @@ Prefer using:
 ```solidity
 (bool success, ) = payable(user).call{value: amount}("");
 require(success, "Transfer failed");
+
+### Error Handling Tips
+
+- Use descriptive require messages
+- Prefer custom errors in Solidity 0.8.4+ for gas savings
+- Always validate user inputs
+- Handle edge cases (zero amounts, zero addresses)
