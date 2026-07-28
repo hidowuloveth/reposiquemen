@@ -733,3 +733,9 @@ function batchUpdateRewards(address[] calldata users) public onlyOwner {
     for (uint i = 0; i < users.length; i++) {
         updateRewards(users[i]);
    
+### Is Active User View
+
+```solidity
+function isActiveUser(address user) public view returns (bool) {
+    return stakedAmount[user] > 0 || balances[user] > 0;
+}
