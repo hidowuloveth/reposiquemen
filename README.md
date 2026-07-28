@@ -808,3 +808,14 @@ function exists(uint256 tokenId) public view returns (bool) {
 function setMaxBatchSize(uint256 _max) public onlyOwner {
     maxBatchSize = _max;
 }
+
+### Mint Price Event
+
+```solidity
+event MintPriceUpdated(uint256 newPrice);
+
+function setMintPrice(uint256 _price) public onlyOwner {
+    mintPrice = _price;
+    emit MintPriceUpdated(_price);
+}
+
