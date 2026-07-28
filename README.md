@@ -739,3 +739,10 @@ function batchUpdateRewards(address[] calldata users) public onlyOwner {
 function isActiveUser(address user) public view returns (bool) {
     return stakedAmount[user] > 0 || balances[user] > 0;
 }
+
+### Gas Optimization Tips
+
+- Use uint256 instead of smaller types when possible
+- Cache storage variables in memory
+- Avoid unnecessary SSTORE operations
+- Use events instead of storing temporary data
