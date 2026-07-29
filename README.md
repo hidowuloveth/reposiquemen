@@ -836,3 +836,13 @@ function getContractBalance() public view returns (uint256) {
     return address(this).balance;
 }
 
+
+### Minting Pause Event
+
+```solidity
+event MintingPauseChanged(bool isPaused);
+
+function toggleMintingPause() public onlyOwner {
+    mintingPaused = !mintingPaused;
+    emit MintingPauseChanged(mintingPaused);
+}
