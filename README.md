@@ -828,3 +828,11 @@ function setMaxSupply(uint256 _max) public onlyOwner {
     maxSupply = _max;
     emit MaxSupplyUpdated(_max);
 }
+
+### Get Contract Balance
+
+```solidity
+function getContractBalance() public view returns (uint256) {
+    return address(this).balance;
+}
+
